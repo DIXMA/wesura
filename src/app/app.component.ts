@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(private spinner: NgxSpinnerService, private youTubeService: YoutubeService, private sanitizer: DomSanitizer) {
   }
 
-  ngOnInit () {
+  ngOnInit() {
     this.spinner.show();
     this.videos = [];
     this.youTubeService.getVideos(6).subscribe(lista => {
@@ -49,7 +49,7 @@ export class AppComponent {
     });
   }
 
-  formatDataVideo (video) {
+  formatDataVideo(video) {
     return {
       videoId: video.id.videoId,
       description: video.snippet.description,
