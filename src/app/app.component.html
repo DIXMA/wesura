@@ -2,38 +2,26 @@
 <div class="toolbar" role="banner">
   <span>Wesura</span>
     <div class="spacer"></div>
-  <input type="search">
-  <button class="btn_primary"><i class="fas fa-search"></i></button>
+  <input type="search" ngModel name="search" placeholder="Búsqueda">
+  <button class="btn_primary" (click)="searchVideos()"><i class="fas fa-search"></i> {{search}}</button>
 </div>
 
 <div class="content" role="main">
   <div>
     <h3>Recomendados o encontrdos</h3>
     <div class="list-content">
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="card">
-        <iframe width="195" height="145" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card" *ngFor="let video of videos">
+        <img width="195" height="145" [src]="video.thumbnails.url" [alt]="video.title" style="width:100%">
+        <div class="card-container">
+          <b>{{ video.title }}</b>
+        </div>
       </div>
     </div>
   </div>
   <hr/>
   <div class="list-content min" style="margin: 1rem;">
     <div class="card card-large">
-      <iframe width="520" height="300" src="https://www.youtube.com/embed/ZMmpJHFEPus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe *ngIf="selectVideo" width="620" height="300" src="{{selectVideo.urlEmbed}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="card card-large">
       <div class="card-container">
