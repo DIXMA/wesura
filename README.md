@@ -1,27 +1,21 @@
 # Wesura
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
+* Este proyecto está desarrollado con [Angular CLI](https://github.com/angular/angular-cli) versión 8.3.10.
+* Este proyecto está desarrollado con NodeJs versión > 10.9.0.
 
-## Development server
+## Clonar el proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para clonar el proyecto, se debe ejecutar el comando git clone https://github.com/DIXMA/wesura.git
 
-## Code scaffolding
+## Clonar el proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para lograr correr el proyecto, se debe ingresar en la terminal de comandos, npm install. Este instalará las dependencias necesarias para el proyecto.
 
-## Build
+## Clonar el proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Tener en cuenta que si el codigo del api de google se ha vencido, no se podrá acceder al contenido de youtube, se tiene uno de prueba.
 
-## Running unit tests
+## Correr el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecutar en consola `ng serve` correr un el servidor local del proyecto. Ingresarn en el navegador en la ruta `http://localhost:4200/`.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
