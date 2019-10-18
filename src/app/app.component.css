@@ -43,8 +43,8 @@ p {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  float: left;
-  padding: 2px 20px 2px 8px;
+  /*float: left;*/
+  padding: 7px 22px 4px 8px;;
   border: 1px solid #b7b7b7;
   -webkit-border-radius: 3px;
   border-radius: 10px;
@@ -171,6 +171,10 @@ footer {
 footer a {
   display: flex;
   align-items: center;
+}
+
+a {
+  cursor: pointer;
 }
 
 /* Responsive Styles */

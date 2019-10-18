@@ -8,11 +8,11 @@ import {Observable} from 'rxjs';
 })
 export class YoutubeService {
 
-  apiKey = 'AIzaSyCatkoYLjQ5hwN68hF4zBUWdP-pFIIyqBA';
+  apiKey = 'AIzaSyBdwrdLKZ_wkdN4dV7zCaXSuZN0apeejG0';
 
   constructor(public http: HttpClient) { }
 
-  getVideos(maxResults): Observable<Object> {
+  getVideos(maxResults: any): Observable<Object> {
     const url = 'https://www.googleapis.com/youtube/v3/search?key=' + this.apiKey + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults;
     return this.http.get(url)
       .pipe(map((res) => {
@@ -20,7 +20,7 @@ export class YoutubeService {
       }));
   }
 
-  searchVideos(search, maxResults): Observable<Object> {
+  searchVideos(search: any, maxResults: any): Observable<Object> {
     const url = 'https://www.googleapis.com/youtube/v3/search?key=' + this.apiKey + '&q=' + search + '&part=snippet &type=video,id&maxResults=' + maxResults;
     return this.http.get(url)
       .pipe(map((res) => {

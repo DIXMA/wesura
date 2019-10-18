@@ -2,32 +2,37 @@
 <ngx-spinner></ngx-spinner>
 <div class="toolbar" role="banner">
   <span>Wesura</span>
-    <div class="spacer"></div>
-  <input type="search" ngModel name="search" placeholder="Búsqueda">
-  <button class="btn_primary" (click)="searchVideos()"><i class="fas fa-search"></i> {{search}}</button>
+  <div class="spacer"></div>
+  <input type="text" [(ngModel)]="txtSearch" name="txtSearch" placeholder="Búsqueda">
+  <button class="btn_primary" (click)="searchVideos()"><i class="fas fa-search"></i></button>
 </div>
 
 <div class="content" role="main">
   <div>
     <h3>Recomendados o encontrdos</h3>
-    <div class="list-content">
+    <div class="list-content" *ngIf="videos">
       <div class="card" *ngFor="let video of videos">
         <img width="195" height="145" [src]="video.thumbnails.url" [alt]="video.title" style="width:100%">
         <div class="card-container">
-          <b>{{ video.title }}</b>
+          <b><a (click)="selectedVideo(video)">{{ video.title }}</a></b>
         </div>
+      </div>
+      <div class="list-content" *ngIf="videos">
+        <p>No se han encontrado videos en este momento.</p>
       </div>
     </div>
   </div>
   <hr/>
-  <div class="list-content min" style="margin: 1rem;">
+  <div class="list-content min" style="margin: 1rem;" *ngIf="selectVideo">
     <div class="card card-large">
-      <iframe *ngIf="selectVideo" width="620" height="300" src="{{selectVideo.urlEmbed}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div *ngIf="selectVideo">
+        <iframe width="620" height="300" [src]="selectVideo.urlEmbed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>      
     </div>
     <div class="card card-large">
-      <div class="card-container">
-        <h3>Titulo</h3>
-        <p>Aqui va todo el textote</p>
+      <div class="card-container" *ngIf="selectVideo">
+        <h3>{{selectVideo.title}}</h3>
+        <p>{{selectVideo.description}}</p>
       </div>
     </div>
   </div>
