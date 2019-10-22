@@ -17,7 +17,7 @@
           <b><a (click)="selectedVideo(video)">{{ video.title }}</a></b>
         </div>
       </div>
-      <div class="list-content" *ngIf="videos">
+      <div class="list-content" *ngIf="!videos">
         <p>No se han encontrado videos en este momento.</p>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="card card-large">
       <div *ngIf="selectVideo">
         <iframe width="620" height="300" [src]="selectVideo.urlEmbed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>      
+      </div>
     </div>
     <div class="card card-large">
       <div class="card-container" *ngIf="selectVideo">
